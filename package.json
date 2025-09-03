@@ -15,6 +15,9 @@
     "lint:fix": "eslint --ext .js,.ts,.vue . --fix",
     "commit": "git add . && git-cz"
   },
+  "eslintConfig": {
+    "extends": "./.eslintrc.js"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
