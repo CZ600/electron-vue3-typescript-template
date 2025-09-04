@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import {
     ElContainer,
     ElHeader,
@@ -60,7 +60,15 @@ const error = ref('')
 const electronAPI = window.electronAPI
 const form = reactive({
     model: '',
+    filePath: '',
+
 })// 渲染 DOCX 文档
+
+watch(form, (newForm, oldForm) => {
+    console.log("the form's value change to:", newForm)
+})
+
+
 
 const onSubmit = () => {
     console.log('submit!')
